@@ -1,6 +1,6 @@
 # SiQi's Blog
 
-个人博客，基于 [2025-blog-public](https://github.com/YYsuni/2025-blog-public) 搭建。
+个人博客
 
 🌐 在线访问：[https://siqi926.dpdns.org](https://siqi926.dpdns.org)
 
