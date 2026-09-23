@@ -19,6 +19,7 @@ import { toast } from 'sonner'
 import ConfigDialog from './config-dialog/index'
 import { useEffect } from 'react'
 import SnowfallBackground from '@/layout/backgrounds/snowfall'
+import CoursesCard from '@/app/(home)/courses-card'
 
 export default function Home() {
 	const { maxSM } = useSize()
