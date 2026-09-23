@@ -1,5 +1,8 @@
 'use client'
 
+import CourseManagement from './course-management'
+import { pushCourses } from '../services/push-courses'
+import coursesData from '@/config/courses.json'
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'motion/react'
 import { toast } from 'sonner'
