@@ -85,6 +85,7 @@ export default function Home() {
 				{cardStyles.socialButtons?.enabled !== false && <SocialButtons />}
 				{!maxSM && cardStyles.shareCard?.enabled !== false && <ShareCard />}
 				{cardStyles.articleCard?.enabled !== false && <AritcleCard />}
+				{cardStyles.coursesCard?.enabled !== false && <CoursesCard />}
 				{!maxSM && cardStyles.writeButtons?.enabled !== false && <WriteButtons />}
 				{cardStyles.likePosition?.enabled !== false && <LikePosition />}
 				{cardStyles.hatCard?.enabled !== false && <HatCard />}
