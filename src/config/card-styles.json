@@ -104,5 +104,9 @@
 		"offsetX": null,
 		"offsetY": null,
 		"enabled": false
+	},
+	"coursesCard": {
+		"offsetX": 404,
+		"offsetY": 256
 	}
 }
