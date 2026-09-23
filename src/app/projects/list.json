@@ -100,5 +100,15 @@
 		"tags": [
 			"教程"
 		]
+	},
+	{
+		"name": "Deepseek",
+		"year": 2026,
+		"image": "blob:https://siqi926.dpdns.org/594ccd7f-3e54-4ebd-823e-9aeab9d005c9",
+		"url": "https://chat.deepseek.com/",
+		"description": "国内大模型",
+		"tags": [
+			"#AI"
+		]
 	}
 ]
