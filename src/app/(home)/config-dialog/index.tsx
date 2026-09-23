@@ -20,12 +20,13 @@ interface ConfigDialogProps {
 	onClose: () => void
 }
 
-type TabType = 'site' | 'color' | 'layout'
+type TabType = 'site' | 'color' | 'layout' | 'courses'
 
 export default function ConfigDialog({ open, onClose }: ConfigDialogProps) {
 	const { isAuth, setPrivateKey } = useAuthStore()
 	const { siteContent, setSiteContent, cardStyles, setCardStyles, regenerateBubbles } = useConfigStore()
 	const [formData, setFormData] = useState<SiteContent>(siteContent)
+	const [courses, setCourses] = useState(coursesData.courses)
 	const [cardStylesData, setCardStylesData] = useState<CardStyles>(cardStyles)
 	const [originalData, setOriginalData] = useState<SiteContent>(siteContent)
 	const [originalCardStyles, setOriginalCardStyles] = useState<CardStyles>(cardStyles)
@@ -125,6 +126,7 @@ export default function ConfigDialog({ open, onClose }: ConfigDialogProps) {
 				removedBackgroundImages,
 				socialButtonImageUploads
 			)
+			await pushCourses({ courses })
 			setSiteContent(formData)
 			setCardStyles(cardStylesData)
 			updateThemeVariables(formData.theme)
@@ -227,7 +229,8 @@ export default function ConfigDialog({ open, onClose }: ConfigDialogProps) {
 	const tabs: { id: TabType; label: string }[] = [
 		{ id: 'site', label: '网站设置' },
 		{ id: 'color', label: '色彩配置' },
-		{ id: 'layout', label: '首页布局' }
+		{ id: 'layout', label: '首页布局' },
+		{ id: 'courses', label: '课程管理' }
 	]
 
 	return (
@@ -300,6 +303,7 @@ export default function ConfigDialog({ open, onClose }: ConfigDialogProps) {
 					)}
 					{activeTab === 'color' && <ColorConfig formData={formData} setFormData={setFormData} />}
 					{activeTab === 'layout' && <HomeLayout cardStylesData={cardStylesData} setCardStylesData={setCardStylesData} onClose={onClose} />}
+					{activeTab === 'courses' && (<CourseManagement courses={courses} setCourses={setCourses} />)}
 				</div>
 			</DialogModal>
 		</>
